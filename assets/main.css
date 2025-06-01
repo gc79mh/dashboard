@@ -58,30 +58,44 @@ h2, h3, h4 {
 }
 
 /* DataTable styling */
-.dash-table-container .dash-spreadsheet-container {
+.dash-table-container {
     background: #fff;
-    border-radius: 6px;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 8px;
+    max-width: 100%;
+    width: 100% !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100% !important;
+    max-height: 100%;
 }
+
+.dash-table-container .dash-spreadsheet-container {
+    background: transparent;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
 .dash-table-container .dash-spreadsheet-inner {
-    border-radius: 6px;
+    border-radius: 8px;
 }
+
 .dash-table-container .dash-header {
     background: #f9f9f9 !important;
     font-weight: bold;
     color: #222;
 }
+
 .dash-table-container .dash-cell {
     font-weight: 500;
     color: #333;
     background: #fff;
 }
+
 .dash-table-container .dash-cell.focused {
     background: #e6f0fa !important;
 }
-
-/* Graphs */
-/* ...existing code... */
 
 /* Graphs */
 .js-plotly-plot {
@@ -92,6 +106,9 @@ h2, h3, h4 {
     max-width: 100%;      /* Prevents overflow */
     width: 100% !important; /* Ensures it doesn't grow beyond parent */
     box-sizing: border-box;
+    overflow: hidden;      /* Prevents plot from overflowing container */
+    height: 100% !important; /* Fill parent but don't exceed */
+    max-height: 100%;      /* Prevent vertical overflow */
 }
 
 /* Prevent flex children from growing indefinitely */
@@ -99,9 +116,8 @@ h2, h3, h4 {
     flex-shrink: 1;
     flex-grow: 1;
     min-width: 0;
+    min-height: 0;
 }
-
-/* ...existing code... */
 
 /* RangeSlider */
 .rc-slider {
