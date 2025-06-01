@@ -1,0 +1,152 @@
+/* General body and background */
+body {
+    background: #f4f6fa;
+    font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+    color: #222;
+    margin: 0;
+}
+
+/* Headings */
+h2, h3, h4 {
+    color: #222;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Tabs styling */
+.dash-tabs {
+    background: #fff;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    margin-bottom: 0;
+}
+.tab {
+    font-weight: 600;
+    color: #636efa;
+    background: #f4f6fa;
+    border-radius: 8px 8px 0 0;
+    margin-right: 2px;
+}
+.tab--selected {
+    background: #fff !important;
+    color: #222 !important;
+    border-bottom: 2px solid #636efa !important;
+}
+
+/* Main content area */
+#quick-summary, #selected-countries {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    padding: 10px 18px;
+    margin-bottom: 10px;
+}
+
+/* Checklist and dropdown panel */
+#country-checklist, #metric-dropdown, #country-search {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+}
+
+/* Checklist scroll */
+#country-checklist {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+/* DataTable styling */
+.dash-table-container .dash-spreadsheet-container {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+.dash-table-container .dash-spreadsheet-inner {
+    border-radius: 6px;
+}
+.dash-table-container .dash-header {
+    background: #f9f9f9 !important;
+    font-weight: bold;
+    color: #222;
+}
+.dash-table-container .dash-cell {
+    font-weight: 500;
+    color: #333;
+    background: #fff;
+}
+.dash-table-container .dash-cell.focused {
+    background: #e6f0fa !important;
+}
+
+/* Graphs */
+/* ...existing code... */
+
+/* Graphs */
+.js-plotly-plot {
+    background: #fff !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 8px;
+    max-width: 100%;      /* Prevents overflow */
+    width: 100% !important; /* Ensures it doesn't grow beyond parent */
+    box-sizing: border-box;
+}
+
+/* Prevent flex children from growing indefinitely */
+.dash-graph, .js-plotly-plot {
+    flex-shrink: 1;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+/* ...existing code... */
+
+/* RangeSlider */
+.rc-slider {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+.rc-slider-track {
+    background-color: #636efa !important;
+}
+.rc-slider-handle {
+    border-color: #636efa !important;
+    background: #fff !important;
+    box-shadow: 0 2px 8px rgba(99,110,250,0.15);
+}
+.rc-slider-dot-active {
+    border-color: #636efa !important;
+}
+
+/* Selected countries chips */
+#selected-countries span {
+    display: inline-block;
+    background: #e6f0fa;
+    border-radius: 12px;
+    padding: 4px 12px;
+    margin-right: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(99,110,250,0.06);
+}
+
+/* Responsive tweaks */
+@media (max-width: 1200px) {
+    .dash-table-container, .js-plotly-plot {
+        font-size: 0.95em;
+    }
+}
+@media (max-width: 900px) {
+    .js-plotly-plot, .dash-table-container {
+        padding: 2px;
+    }
+    #country-checklist, #metric-dropdown, #country-search {
+        padding: 4px;
+    }
+}
+/* Prevent flex containers from allowing children to overflow */
+div[style*="display: flex"] {
+    min-width: 0 !important;
+}
